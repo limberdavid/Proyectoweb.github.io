@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f1f3f5;
+}
+
+/* HEADER */
+header {
+    background: #e63946;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+nav button {
+    margin: 5px;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 20px;
+    background: #1d3557;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+nav button:hover {
+    background: #457b9d;
+}
+
+/* CONTENEDOR */
+.contenedor {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* MENÚ */
+.menu {
+    width: 70%;
+}
+
+/* SECCIONES */
+.seccion {
+    display: none;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.seccion.activa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    animation: anim .4s ease forwards;
+}
+
+@keyframes anim {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.1);
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+    color: #1d3557;
+}
+
+.card p {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card button {
+    margin: 10px;
+    padding: 8px 16px;
+    background: #457b9d;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.card button:hover {
+    background: #1d3557;
+}
+
+/* CARRITO */
+.carrito {
+    width: 30%;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.carrito h2 {
+    margin-bottom: 15px;
+    color: #1d3557;
+}
+
+.total-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.btn-pagar {
+    width: 100%;
+    padding: 12px;
+    border-radius: 30px;
+    border: none;
+    background: #2a9d8f;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-pagar:hover {
+    background: #21867a;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-card {
+    background: white;
+    width: 360px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.checkout-card h2 {
+    margin-bottom: 15px;
+    color: #1d3557;
+}
+
+.checkout-card input {
+    width: 100%;
+    margin: 6px 0;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.tarjeta {
+    display: none;
+}
+
+.fila {
+    display: flex;
+    gap: 10px;
+}
+
+.checkout-footer {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.btn-confirmar {
+    width: 100%;
+    padding: 10px;
+    background: #2a9d8f;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-confirmar:hover {
+    background: #21867a;
+}
+
+.btn-cancelar {
+    width: 100%;
+    margin-top: 6px;
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #e63946;
+    color: white;
+    transition: background 0.3s;
+}
+
+.btn-cancelar:hover {
+    background: #b02636;
+}
+
+/* REGISTRO DE VENTAS */
+.registro {
+    margin: 20px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.registro h2 {
+    color: #1d3557;
+    margin-bottom: 15px;
+}
+
+.venta {
+    background: #ffffff;
+    border-left: 5px solid #2a9d8f;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.venta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.venta strong {
+    color: #e63946;
+}
+
+.venta br {
+    margin-bottom: 4px;
+}
+
+/* BOTÓN ELIMINAR EN CARRITO */
+.btn-eliminar {
+    background: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 6px;
+    cursor: pointer;
+    margin-left: 8px;
+    font-size: 12px;
+    transition: background 0.3s;
+}
+
+.btn-eliminar:hover {
+    background: #b02636;
+}
+
+
+
+/* ==========================
+   MODO OSCURO
+========================== */
+
+body.dark {
+    background: #121212;
+    color: #eaeaea;
+}
+
+/* HEADER */
+body.dark header {
+    background: #1f1f1f;
+}
+
+body.dark nav button {
+    background: #333;
+}
+
+body.dark nav button:hover {
+    background: #555;
+}
+
+/* CARDS */
+body.dark .card {
+    background: #1e1e1e;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+body.dark .card h3 {
+    color: #90caf9;
+}
+
+body.dark .card p {
+    color: #ddd;
+}
+
+/* CARRITO */
+body.dark .carrito {
+    background: #1e1e1e;
+}
+
+body.dark .carrito h2 {
+    color: #90caf9;
+}
+
+/* MODAL */
+body.dark .checkout-card {
+    background: #1e1e1e;
+}
+
+body.dark .checkout-card input {
+    background: #2a2a2a;
+    color: white;
+    border: 1px solid #555;
+}
+
+/* REGISTRO DE VENTAS */
+body.dark .registro {
+    background: #1e1e1e;
+}
+
+body.dark .venta {
+    background: #2a2a2a;
+}
+
+/* BOTONES */
+body.dark .btn-pagar,
+body.dark .btn-confirmar {
+    background: #26a69a;
+}
+
+body.dark .btn-cancelar {
+    background: #c62828;
+}
+

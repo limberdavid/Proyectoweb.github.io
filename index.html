@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>FoodExpress | Ventas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <h1>🍔Delicias y Sabores</h1>
+        <nav>
+            <button onclick="mostrarSeccion('comidas')">Comidas</button>
+            <button onclick="mostrarSeccion('bebidas')">Bebidas</button>
+            <button onclick="mostrarSeccion('postres')">Postres</button>
+            <button id="modoOscuroBtn" onclick="toggleModoOscuro()">🌙</button>
+        </nav>
+    </div>
+</header>
+
+<main class="contenedor">
+
+    <!-- MENÚ -->
+    <section class="menu">
+        <div id="comidas" class="seccion activa"></div>
+        <div id="bebidas" class="seccion"></div>
+        <div id="postres" class="seccion"></div>
+    </section>
+
+    <!-- CARRITO -->
+    <aside class="carrito">
+        <h2>🛒 Carrito</h2>
+        <ul id="lista-carrito" class="carrito-lista"></ul>
+
+        <div class="total-box">
+            <span>Total</span>
+            <strong>Bs <span id="total">0</span></strong>
+        </div>
+
+        <button class="btn-pagar" onclick="abrirCheckout()">Finalizar compra</button>
+    </aside>
+
+</main>
+
+<!-- CHECKOUT -->
+<div id="checkout" class="modal">
+    <div class="checkout-card">
+        <h2>🧾 Registro de Compra</h2>
+
+        <input id="cliente" type="text" placeholder="Nombre del cliente">
+
+        <h3>Productos</h3>
+        <ul id="lista-checkout"></ul>
+
+        <h3>Método de pago</h3>
+        <label>
+            <input type="radio" name="pago" value="Efectivo" checked onclick="mostrarTarjeta(false); mostrarQR(false)">
+            Efectivo
+        </label>
+        <label>
+            <input type="radio" name="pago" value="Tarjeta" onclick="mostrarTarjeta(true)">
+            Tarjeta
+        </label>
+<label>
+    <input type="radio" name="pago" value="QR" onclick="mostrarTarjeta(false); mostrarQR(true)">
+    Pago por QR
+</label>
+
+<div id="qr" class="tarjeta">
+    <p style="text-align:center; margin:10px 0;">Escanea el código QR</p>
+    <img src="QR.JPEG " alt="QR de pago" style="width:100%; border-radius:10px;">
+</div>
+
+
+        <div id="tarjeta" class="tarjeta">
+            <input type="text" placeholder="Número de tarjeta">
+            <div class="fila">
+                <input type="text" placeholder="MM/AA">
+                <input type="text" placeholder="CVV">
+            </div>
+        </div>
+
+        <div class="checkout-footer">
+            <strong>Total: Bs <span id="total-checkout">0</span></strong>
+        </div>
+
+        <button class="btn-confirmar" onclick="confirmarCompra()">Confirmar</button>
+        <button class="btn-cancelar" onclick="cerrarCheckout()">Cancelar</button>
+    </div>
+</div>
+
+<!-- REGISTRO DE VENTAS -->
+<section class="registro">
+    <h2>📊 Registro de Ventas</h2>
+    <div id="ventas"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
