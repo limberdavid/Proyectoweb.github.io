@@ -4,22 +4,22 @@
 // ==========================
 const productos = {
     comidas: [
-        { nombre: "Pizza", precio: 40, img: "pizza.JPG" },
+        { nombre: "Pizza", precio: 40, img: "pizza.jpg" },
         { nombre: "Hamburguesa", precio: 30, img: "https://images.unsplash.com/photo-1550547660-d9450f859349" },
-        { nombre: "Hot Dog", precio: 20, img: "HOT.JPG" },
+        { nombre: "Hot Dog", precio: 20, img: "HOT.jpg" },
         { nombre: "Ensalada ", precio: 25, img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092" }
     ],
     bebidas: [
         { nombre: "Coca Cola", precio: 10, img: "https://images.unsplash.com/photo-1629203851122-3726ecdf080e" },
-        { nombre: "Fanta", precio: 10, img: "FANTA.JPG" },
-        { nombre: "Agua", precio: 5, img: "AGUA.JPG" },
-        { nombre: "Jugo Natural", precio: 12, img: "NARANJA.JPG" }
+        { nombre: "Fanta", precio: 10, img: "FANTA.jpg" },
+        { nombre: "Agua", precio: 5, img: "AGUA.jpg" },
+        { nombre: "Jugo Natural", precio: 12, img: "NARANJA.jpg" }
     ],
     postres: [
         { nombre: "Torta Chocolate", precio: 25, img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587" },
-        { nombre: "Helado Vainilla", precio: 15, img: "VAINILLA.JPG" },
-        { nombre: "Brownie", precio: 18, img: "CHOCO.JPG" },
-        { nombre: "Cheesecake", precio: 20, img: "Cheesecake.JPG" }
+        { nombre: "Helado Vainilla", precio: 15, img: "VAINILLA.jpg" },
+        { nombre: "Brownie", precio: 18, img: "CHOCO.jpg" },
+        { nombre: "Cheesecake", precio: 20, img: "Cheesecake.jpg" }
     ]
 };
 
@@ -210,3 +210,4 @@ document.addEventListener("keydown", function (event) {
         }
     }
 });
+
